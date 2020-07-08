@@ -11,4 +11,10 @@ router.get('/', function (req, res, next) {
   res.send(bookmarks)
 })
 
+router.post('/', function (req, res) {
+  // res.send(`You sent: ${JSON.stringify(req.body)}`)
+  bookmarks.push(req.body)
+  res.sendStatus(201) //201 code = successfully created
+})
+
 module.exports = router
